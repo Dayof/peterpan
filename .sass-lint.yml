@@ -10,9 +10,9 @@ options:
 # File Options
 files:
   include:
-    'meninascomp/static/sass/**/*.s+(a|c)ss'
+    'peterpan/static/sass/**/*.s+(a|c)ss'
   ignore:
-    - 'meninascomp/static/sass/vendor/**/*.*'
+    - 'peterpan/static/sass/vendor/**/*.*'
 # Rule Configuration
 rules:
   extends-before-mixins: 2
