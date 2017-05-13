@@ -1,0 +1,10 @@
+{% extends "home.html" %}
+{% block body %}
+  <div class="mid-content">
+	<ul>
+		{% for d in content %}
+			<li><a href={{d[1]}}>{{d[0]}}</a>
+		{% endfor %}
+	</ul>
+  </div>
+{% endblock %}
