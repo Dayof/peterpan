@@ -5,13 +5,16 @@
     <title>Peter Pan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='sass/main.scss') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='sass/main.scss') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='components/bootstrap-css-only/css/bootstrap.min.css') }}">
     <!-- scripts -->
   </head>
   <body>
     <div class="page">
       <div class="header">
-        lala
+        <div class="jumbotron">
+          lala
+        </div>
       </div>
       <div class="content">
         {% block body %}{% endblock %}
