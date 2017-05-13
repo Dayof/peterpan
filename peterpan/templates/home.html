@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>Peter Pan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='sass/main.scss') }}">
+    <!-- scripts -->
+  </head>
+  <body>
+    <div class="page">
+      <div class="header">
+        lala
+      </div>
+      <div class="content">
+        {% block body %}{% endblock %}
+      </div>
+
+      <div class="footer">
+        laal
+      </div>
+    </div>
+  </body>
+</html>
