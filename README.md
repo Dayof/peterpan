@@ -2,6 +2,13 @@
 
 Projeto da Hackathon Globo 2017.
 
+## Sistema
+
+Executar
+```
+$ python run.py
+```
+
 ## Ambiente
 
 Instalar
