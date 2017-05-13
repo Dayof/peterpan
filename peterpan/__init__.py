@@ -11,4 +11,4 @@ def not_found(error):
 app.register_blueprint(routes.mod)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=8080)
