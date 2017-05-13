@@ -4,7 +4,7 @@ Projeto da Hackathon Globo 2017.
 
 ## Sistema
 
-Executar
+Executar <3
 ```
 $ python run.py
 ```
