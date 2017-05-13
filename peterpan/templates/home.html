@@ -8,12 +8,27 @@
     <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='sass/main.scss') }}"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='components/bootstrap-css-only/css/bootstrap.min.css') }}">
     <!-- scripts -->
+    <style>
+      .navbar {
+        background-color: #c4170c;
+        color: white;
+        text-align: center;
+        font-family: Arial;
+        font-size: 16px;
+        line-height: 14px;
+        padding-top: 10px;
+        border-bottom-color: black;
+      }
+    </style>
   </head>
   <body>
     <div class="page">
       <div class="header">
-        <div class="jumbotron">
-          lala
+        <div class="navbar navbar-default navbar-fixed-to-top">
+          <div class="container-fluid">
+            <p>Peter Pan</p>
+            <p>Últimas notícias</p>
+          </div>
         </div>
       </div>
       <div class="content">
