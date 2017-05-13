@@ -9,19 +9,29 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='components/bootstrap-css-only/css/bootstrap.min.css') }}">
     <!-- scripts -->
   </head>
-  <body>
+  <body >
     <div class="page">
       <div class="header">
         <div class="jumbotron">
           lala
         </div>
       </div>
-      <div class="content">
+      <div class="content" >
         {% block body %}{% endblock %}
       </div>
-
-      <div class="footer">
-        laal
+      
+      <div class="footer" >
+       <footer>
+          <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation" style="background-color:#c4170c !important; font-family: arial; font-size: 11px; color: white; text-align: center; padding-top: 0.5%; width: 100%" >
+            <div class="container" style="width: 100%">
+              <div class="navbar-header" style="width: 100%">
+              Desenvolvido por: Dayanne Fernandes, Gabriel Naves, Ícaro Mota e Jéssica Souza
+                <!-- content -->
+              </div>
+            </div>
+          </div>
+        </footer>
+        
       </div>
     </div>
   </body>
