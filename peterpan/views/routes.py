@@ -131,7 +131,7 @@ def get_template(pages):
 		append_sources_and_date_and_image_in(soup)
 
 		#print(list(zip(titles,sources,dates, imgs)))
-		content = zip(titles, links)
+		content = zip(titles, links, sources, dates, imgs)
 		return content
 
 def empty_lists():
