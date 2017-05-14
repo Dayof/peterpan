@@ -46,23 +46,38 @@ def append_source(text):
 	sources.append(source)
 	return text
 
-def parse(link):
+def append_link(link):
 	url = link.get('href')
 	if isUrlValid(url) and has_title(link):
 		if isUrlComplete(url):
 			add_new(url)
 			titles.append(get_title(link))
 
+def append_links_in(soup):
+	a_link = soup.find_all('a')
+	for link in a_link:
+		append_link(link)
+
+def append_date(text):
+	if text != '':
+		near_text = text[:80]
+		date = ''
+		if 'busca-tempo-decorrido' in near_text:
+			date = near_text.split('>')[1]
+		dates.append(date)
+	return text
+
+def append_sources_and_date_in(soup):
+	text = soup.prettify()
+	while(text != ''):
+		text = append_source(text)
+		text = append_date(text)
+
 def get_template(pages):
 		soup = BeautifulSoup(pages.content, 'html.parser')
-		a_link = soup.find_all('a')
 
-		for link in a_link:
-			parse(link)
-
-		text = soup.prettify()
-		while(text != ''):
-			text = append_source(text)
+		append_links_in(soup)
+		append_sources_and_date_in(soup)
 
 		content = zip(titles, links)
 		return render_template('links_list.html', content=content)
