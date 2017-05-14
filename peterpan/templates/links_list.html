@@ -3,9 +3,21 @@
   <div class="mid-content">
 	<ul>
 		{% for d in content %}
-			<div class="jumbotron">
-        <div class="col-xs-12">
+			<div class="container container-fluid">
+        <div class="col-xs-12 news-title">
           <a href={{d[1]}}>{{d[0]}}</a>
+        </div>
+        <div class="col-xs-4">
+          <p>origem</p>
+        </div>
+        <div class="col-xs-8">
+          <p>data</p>
+        </div>
+        <div class="col-xs-4">
+          <p>imagem</p>
+        </div>
+        <div class="col-xs-8">
+          <p>descricao</p>
         </div>
       </div>
 		{% endfor %}
