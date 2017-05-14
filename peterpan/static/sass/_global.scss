@@ -1,10 +1,28 @@
-body {
-  margin: 0;
-  height: 100%;
-  padding: 0;
-  background: $background-color;
-  color: $base-black;
-  font-family: $font-stack;
-  line-height: 1.5;
-  min-width: 500px;
+// body {
+//   margin: 0;
+//   height: 100%;
+//   padding: 0;
+//   background: $background-color;
+//   color: $base-black;
+//   font-family: $font-stack;
+//   line-height: 1.5;
+//   min-width: 200px;
+// }
+
+.navbar {
+  background-color: rgb(196, 23, 12) !important;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+.navbar-fixed-top {
+  font-size: 16px;
+  line-height: 14px;
+  padding-top: 1%;
+  border-bottom-color: black;
+}
+.navbar-fixed-bottom {
+  font-size: 11px;
+  padding-top: 0.5%;
+  width: 100%;
 }
