@@ -4,7 +4,9 @@
 	<ul>
 		{% for d in content %}
 			<div class="jumbotron">
-        <a href={{d[1]}}>{{d[0]}}</a>
+        <div class="col-xs-12">
+          <a href={{d[1]}}>{{d[0]}}</a>
+        </div>
       </div>
 		{% endfor %}
 	</ul>

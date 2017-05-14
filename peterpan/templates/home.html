@@ -16,10 +16,11 @@
         text-align: center;
       }
       .navbar-fixed-top {
-        font-size: 16px;
-        line-height: 14px;
+        font-size: 18px;
+        line-height: 82%;
         padding-top: 1%;
         border-bottom-color: black;
+        font-weight: bold;
       }
       .navbar-fixed-bottom {
         font-size: 11px;
@@ -27,8 +28,14 @@
         width: 100%;
       }
       .jumbotron {
+        background-color: white;
         border-radius: 15px;
-        width:97%;
+        width: 90%;
+        margin-left: 5%;
+      }
+      ul {
+        padding-left: 0;
+        list-style-type: none;
       }
     </style>
   </head>
@@ -42,16 +49,20 @@
           </div>
         </div>
       </div>
-      <div class="container-fluid">
-        <p style="padding-top:7%"></p>
+      <div style="background-color:#ececec">
+        <div class="container-fluid">
+          <p style="padding-top:6%"></p>
+        </div>
+        <div class="content" >
+          {% block body %}{% endblock %}
+        </div>
+        <div class="container-fluid">
+          <p style="padding-bottom:2%"></p>
+        </div>
       </div>
-      <div class="content" >
-        {% block body %}{% endblock %}
-      </div>
-
       <div class="footer" >
        <footer>
-          <div class="navbar navbar-inverse navbar-fixed-bottom"  >
+          <div class="navbar navbar-inverse navbar-fixed-bottom">
             <div class="container" style="width: 100%">
               <div class="navbar-header" style="width: 100%">
               Desenvolvido por: Dayanne Fernandes, Gabriel Naves, Ícaro Mota e Jéssica Souza
@@ -59,7 +70,6 @@
             </div>
           </div>
         </footer>
-
       </div>
     </div>
   </body>
