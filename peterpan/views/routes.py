@@ -43,6 +43,21 @@ def append_source(text):
 		return ''
 	text = text.split('busca-portal">', 1)[1]
 	source, text = text.split('</span>', 1)
+	
+	source = source.replace('\n', ' ')
+	index = 0
+	for i in range(len(source)):
+		if source[i] != ' ':
+			index = i
+			break
+	source = source[index:]
+	index = 0
+	for i in range(1,len(source)):
+		if (source[-i]) != ' ':
+			index = i
+			break
+	source = source[:len(source)-index+1]
+
 	sources.append(source)
 	return text
 
@@ -64,30 +79,37 @@ def append_date(text):
 		date = ''
 		if 'busca-tempo-decorrido' in near_text:
 			date = near_text.split('>')[1]
+
+		date = date.replace('\n', ' ')
+		index = 0
+		for i in range(len(date)):
+			if date[i] != ' ':
+				index = i
+				break
+		date = date[index:]
+		index = 0
+		for i in range(1,len(date)):
+			if (date[-i]) != ' ':
+				index = i
+				break
+		date = date[:len(date)-index+1]
+
 		dates.append(date)
 	return text
 
 all_img = []
 def append_img(text):
 	if text != '':
-		#print("begin:")
-		near_text = text[:500]
+		img = ''
+		near_text = text[:650]
 		if near_text.count('img src') > 0:
-			pass
-			#print("has image")
-			#near_text = near_text.split('img src="', 1)[1]
-			#img = near_text.split('">"')[0]
-			#img = near_text
-			#print(img)
-		#print('--------------------')
+			near_text = near_text.split('img src="', 1)[1]
+			img = near_text.split('"/>')[0]
+			img = img.split('">')[0]
+		imgs.append(img)
 
 def append_sources_and_date_and_image_in(soup):
 	text = soup.prettify()
-	#all_img = [x['src'] for x in soup.findAll('img', {'class': 'sizedProdImage'})]
-	#print("!!!")
-	#for img in all_img:
-	#	print("***")
-	#	print(img)
 	while(text != ''):
 		text = append_source(text)
 		text = append_date(text)
@@ -99,7 +121,7 @@ def get_template(pages):
 		append_links_in(soup)
 		append_sources_and_date_and_image_in(soup)
 
-		#print(list(zip(titles,sources,dates)))
+		#print(list(zip(titles,sources,dates, imgs)))
 		content = zip(titles, links)
 		return content
 
