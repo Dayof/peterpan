@@ -46,4 +46,17 @@ ul {
 /* line 34, ../sass/_global.scss */
 .news-title {
   margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* line 39, ../sass/_global.scss */
+.news-originAndDate {
+  font-size: 12px;
+  color: #d1d1d1;
+  font-weight: bold;
+}
+
+/* line 46, ../sass/_global.scss */
+.news-desc {
+  height: 8%;
 }
