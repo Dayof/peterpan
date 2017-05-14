@@ -150,7 +150,10 @@ def get_template(pages):
 
 		#print(list(zip(titles,sources,dates, imgs)))
 		content = zip(titles, links, sources, dates, imgs, descriptions)
-		return content
+		content2 = []
+		for i in range(len(titles)):
+			content2.append(zip(titles[i], links[i], sources[i], dates[i], imgs[i], descriptions[i]))
+		return content2
 
 def empty_lists():
 	links.clear()
