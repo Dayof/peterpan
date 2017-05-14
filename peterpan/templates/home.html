@@ -5,20 +5,55 @@
     <title>Peter Pan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='sass/main.scss') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='sass/main.scss') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='components/bootstrap-css-only/css/bootstrap.min.css') }}">
     <!-- scripts -->
+    <style>
+      .navbar {
+        background-color: #c4170c;
+        color: white;
+        font-family: Arial;
+        text-align: center;
+      }
+      .navbar-fixed-top {
+        font-size: 16px;
+        line-height: 14px;
+        padding-top: 1%;
+        border-bottom-color: black;
+      }
+      .navbar-fixed-bottom {
+        font-size: 11px;
+        padding-top: 0.5%;
+        width: 100%;
+      }
+    </style>
   </head>
-  <body>
+  <body >
     <div class="page">
       <div class="header">
-        lala
+        <div class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+            <p>Peter Pan</p>
+            <p>Últimas notícias</p>
+          </div>
+        </div>
       </div>
-      <div class="content">
+      <div class="content" >
         {% block body %}{% endblock %}
       </div>
 
-      <div class="footer">
-        laal
+      <div class="footer" >
+       <footer>
+          <div class="navbar navbar-inverse navbar-fixed-bottom"  >
+            <div class="container" style="width: 100%">
+              <div class="navbar-header" style="width: 100%">
+              Desenvolvido por: Dayanne Fernandes, Gabriel Naves, Ícaro Mota e Jéssica Souza
+                <!-- content -->
+              </div>
+            </div>
+          </div>
+        </footer>
+
       </div>
     </div>
   </body>
