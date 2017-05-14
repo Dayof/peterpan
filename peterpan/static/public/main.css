@@ -45,7 +45,7 @@ ul {
 
 /* line 40, ../sass/_global.scss */
 .news-title {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 5px;
   margin-top: 8px;
   font-weight: bold;
@@ -60,7 +60,7 @@ ul {
 
 /* line 53, ../sass/_global.scss */
 .news-date {
-  font-size: 12px;
+  font-size: 11px;
   color: #d1d1d1;
   font-weight: bold;
 }
@@ -68,14 +68,14 @@ ul {
 /* line 59, ../sass/_global.scss */
 .news-img {
   background-color: #c4170c;
-  height: 40px;
-  width: 40px;
+  height: 20px;
+  width: 20px;
   margin-bottom: 10px;
 }
 
 /* line 66, ../sass/_global.scss */
 .news-desc {
-  font-size: 14px;
+  font-size: 10px;
   color: black;
   text-align: justify;
   margin-bottom: 10px;
