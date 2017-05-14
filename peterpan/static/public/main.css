@@ -68,14 +68,14 @@ ul {
 /* line 59, ../sass/_global.scss */
 .news-img {
   background-color: #c4170c;
-  height: 10px;
-  width: 10px;
+  height: 30px;
+  width: 30px;
   margin-bottom: 10px;
 }
 
 /* line 66, ../sass/_global.scss */
 .news-desc {
-  font-size: 10px;
+  font-size: 11px;
   color: black;
   text-align: justify;
   margin-bottom: 10px;
