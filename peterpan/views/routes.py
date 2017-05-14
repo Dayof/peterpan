@@ -117,12 +117,27 @@ def append_img(text):
 			img = img.split('">')[0]
 		imgs.append(img)
 
+def append_desc(text):
+	if text != '':
+		description = ''
+		near_text = text[:1200]
+		if near_text.count('<p class="busca-highlight">') > 0:
+			#print('ACHOU')
+			description = near_text.split('<p class="busca-highlight">',1)[1]
+			description = description.split('<span>',1)[1]
+			description = description.split('</span>',1)[0]
+			description = description.split('</span',1)[0]
+			descriptions.append(description)
+		#print('-------------------------------------------------')
+		descriptions.append(description)
+
 def append_sources_and_date_and_image_in(soup):
 	text = soup.prettify()
 	while(text != ''):
 		text = append_source(text)
 		text = append_date(text)
 		append_img(text)
+		append_desc(text)
 
 def get_template(pages):
 		soup = BeautifulSoup(pages.content, 'html.parser')
@@ -131,7 +146,7 @@ def get_template(pages):
 		append_sources_and_date_and_image_in(soup)
 
 		#print(list(zip(titles,sources,dates, imgs)))
-		content = zip(titles, links, sources, dates, imgs)
+		content = zip(titles, links, sources, dates, imgs, descriptions)
 		return content
 
 def empty_lists():
