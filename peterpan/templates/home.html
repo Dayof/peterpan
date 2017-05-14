@@ -11,18 +11,27 @@
   </head>
   <body >
     <div class="page">
-      <div class="header">
+      <div class="header" >
         <div class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
+          <div class="container-fluid" style="margin-top: 2%">
             <!--<p>Peter Pan</p>-->
             <p>Últimas notícias</p>
           </div>
         </div>
       </div>
+
+
       <div class="page-background">
         <div class="container-fluid">
           <p style="padding-top:15%"></p>
         </div>
+      {% if user_info.message %}
+      <div class="page-background">
+        <div class="container" style="background-color: rgb(196, 23, 12); color: white; font-size: 16spx; text-align: center;">
+          <p>Bem Vindo</p>
+        </div>
+      </div>
+      {%endif %}
         <div class="content">
           {% block body %}{% endblock %}
         </div>
@@ -35,7 +44,10 @@
           <div class="navbar navbar-inverse navbar-fixed-bottom">
             <!-- <div class="container" style="width: 100%"> -->
               <div class="navbar-header" style="width: 100%">
-              Desenvolvido por: Dayanne Fernandes, Gabriel Naves, Ícaro Mota e Jéssica Souza
+
+              <img src="globo.jpg">
+
+              <!-- Desenvolvido por: Dayanne Fernandes, Gabriel Naves, Ícaro Mota e Jéssica Souza-->
               </div>
             <!-- </div> -->
           </div>

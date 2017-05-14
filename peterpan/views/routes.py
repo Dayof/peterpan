@@ -52,7 +52,7 @@ def append_source(text):
 		return ''
 	text = text.split('busca-portal">', 1)[1]
 	source, text = text.split('</span>', 1)
-	
+
 	source = source.replace('\n', ' ')
 	index = 0
 	for i in range(len(source)):
@@ -115,7 +115,10 @@ def append_img(text):
 			near_text = near_text.split('img src="', 1)[1]
 			img = near_text.split('"/>')[0]
 			img = img.split('">')[0]
-		imgs.append(img)
+		if '.jpg' in img:
+			imgs.append(img)
+		else:
+			imgs.append('')
 
 def append_desc(text):
 	if text != '':
