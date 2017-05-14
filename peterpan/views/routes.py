@@ -11,6 +11,11 @@ dates = []
 imgs = []
 descriptions = []
 
+# Stubs
+user_info = {'user_id' : '123',
+			'locals' : ['elite', 'supervia'],
+			'links_tags' : ['enem', 'unb'] }
+
 def canConnect(page):
 	return page.status_code == 200
 
@@ -99,7 +104,7 @@ def get_template(pages):
 		append_links_in(soup)
 		append_sources_and_date_and_image_in(soup)
 
-		#print(list(zip(titles,sources,dates)))
+		# print(list(zip(titles,sources,dates)))
 		content = zip(titles, links)
 		return content
 
@@ -120,11 +125,16 @@ def index(name):
 
 		content = get_template(pages)
 		user_id = request.cookies.get('user_id')
+		user_info = {}
+
 		if user_id:
-			print(user_id, 'user with id')
-			return render_template('links_list.html', content=content)
+			# print(user_id, 'user with id')
+			# print(content)
+			user_info['message'] = None
+			return render_template('links_list.html', content=content, user_info=user_info)
 		else:
-			resp = make_response(render_template('links_list.html', content=content))
+			user_info['message'] = 'Bem vindo!'
+			resp = make_response(render_template('links_list.html', content=content, user_info=user_info))
 			resp.set_cookie('user_id', '123')
 			return resp
 	else:
