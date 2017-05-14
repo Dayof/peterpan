@@ -12,7 +12,11 @@ imgs = []
 descriptions = []
 
 # Stubs
-user_info = {'user_id' : '123',
+user_info_new = {'user_id' : None,
+			'locals' : [],
+			'links_tags' : [] }
+
+user_info_old = {'user_id' : '123',
 			'locals' : ['elite', 'supervia'],
 			'links_tags' : ['enem', 'unb'] }
 
