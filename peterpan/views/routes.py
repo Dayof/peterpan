@@ -26,7 +26,7 @@ user_info_total = [{'user_id' : None,
                     'locals' : ['elite', 'supervia'],
                     'links_tags' : ['enem', 'unb']} ]
 
-TEST_CASE = 2
+TEST_CASE = 0
 
 def canConnect(page):
     return page.status_code == 200
