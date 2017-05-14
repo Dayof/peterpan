@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, make_response
 from bs4 import BeautifulSoup
+from random import shuffle
 import requests
 
 mod = Blueprint('main', __name__)
@@ -16,10 +17,10 @@ user_info_total = [{'user_id' : None,
                     'locals' : [],
                     'links_tags' : [] },
                     {'user_id' : '123',
-                    'locals' : ['elite'],
+                    'locals' : ['unb'],
                     'links_tags' : []},
                     {'user_id' : '123',
-                    'locals' : ['elite'],
+                    'locals' : ['unb'],
                     'links_tags' : ['enem']},
                     {'user_id' : '123',
                     'locals' : ['elite', 'supervia'],
@@ -153,34 +154,22 @@ def append_sources_and_date_and_image_in(soup):
         append_desc(text)
 
 def get_some_from_locals(locals):
-    # for i in range(qtd):
     src = requests.get('http://g1.globo.com/busca/?q=' + locals[0])
     soup = BeautifulSoup(src.content, 'html.parser')
-    # local_list.append(soup)
 
     append_links_in(soup)
     append_sources_and_date_and_image_in(soup)
 
-    # a_link = soup.find_all('a')
-    # for j in a_link:
-    #     local_list.append(j)
-
 def get_some_from_links_tag(tags):
-    # for i in range(qtd):
     src = requests.get('http://g1.globo.com/busca/?q=' + tags[0])
     soup = BeautifulSoup(src.content, 'html.parser')
 
     append_links_in(soup)
     append_sources_and_date_and_image_in(soup)
 
-    # a_link = soup.find_all('a')
-    # for j in a_link:
-    #     tags_list.append(a_link)
-
 
 def get_template(pages, locals=None, links_tag=None):
     soup = BeautifulSoup(pages.content, 'html.parser')
-    all_list = []
 
     append_links_in(soup)
     append_sources_and_date_and_image_in(soup)
@@ -196,16 +185,6 @@ def get_template(pages, locals=None, links_tag=None):
         get_some_from_links_tag(links_tag)
 
     content = zip(titles, links, sources, dates, imgs, descriptions)
-
-    # # sort list 2 origin link + 2 pasts locals links + 2 pasts tags links
-    # for i in range(2):
-    #     all_list.append(normal_links[i])
-    #     all_list.append(locals_links[i])
-    #     all_list.append(tag_links[i])
-    #
-    # # put 6 links on general links to the content
-    # for link in all_list:
-    #     append_link(link)
 
     return content
 
@@ -231,6 +210,10 @@ def index(name):
             content = get_template(pages,
                                     user_info_total[TEST_CASE]['locals'],
                                     user_info_total[TEST_CASE]['links_tags'])
+            # print(list(content))
+            # shuffle(list(content))
+            content = list(content)
+            shuffle(content)
             user_info['message'] = None
             return render_template('links_list.html', content=content, user_info=user_info)
         else:
@@ -238,7 +221,6 @@ def index(name):
             user_info['message'] = 'Bem vindo'
             resp = make_response(render_template('links_list.html', content=content, user_info=user_info))
             resp.set_cookie('user_id', '123')
-
 
             return resp
     else:
