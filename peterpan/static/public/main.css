@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-/* line 7, ../sass/_global.scss */
+/* line 8, ../sass/_global.scss */
 .navbar-fixed-top {
   font-size: 18px;
   line-height: 82%;
@@ -15,14 +15,14 @@
   font-weight: bold;
 }
 
-/* line 15, ../sass/_global.scss */
+/* line 16, ../sass/_global.scss */
 .navbar-fixed-bottom {
   font-size: 11px;
   padding-top: 0.5%;
   width: 100%;
 }
 
-/* line 20, ../sass/_global.scss */
+/* line 22, ../sass/_global.scss */
 .container {
   background-color: white;
   border-radius: 15px;
@@ -32,31 +32,48 @@
   margin-bottom: 3%;
 }
 
-/* line 28, ../sass/_global.scss */
+/* line 31, ../sass/_global.scss */
 ul {
   padding-left: 0;
   list-style-type: none;
 }
 
-/* line 32, ../sass/_global.scss */
+/* line 36, ../sass/_global.scss */
 .page-background {
   background-color: #d1d1d1;
 }
 
-/* line 35, ../sass/_global.scss */
+/* line 40, ../sass/_global.scss */
 .news-title {
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-/* line 40, ../sass/_global.scss */
-.news-originAndDate {
+/* line 45, ../sass/_global.scss */
+.news-source {
   font-size: 12px;
   color: #d1d1d1;
   font-weight: bold;
 }
 
-/* line 47, ../sass/_global.scss */
+/* line 51, ../sass/_global.scss */
+.news-date {
+  font-size: 12px;
+  color: #d1d1d1;
+  font-weight: bold;
+}
+
+/* line 57, ../sass/_global.scss */
+.news-img {
+  background-color: #c4170c;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 4px;
+}
+
+/* line 64, ../sass/_global.scss */
 .news-desc {
-  height: 8%;
+  font-size: 13px;
+  color: black;
+  text-align: justify;
 }
