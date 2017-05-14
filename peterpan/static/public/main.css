@@ -8,21 +8,42 @@
 
 /* line 7, ../sass/_global.scss */
 .navbar-fixed-top {
-  font-size: 16px;
-  line-height: 14px;
+  font-size: 18px;
+  line-height: 82%;
   padding-top: 1%;
   border-bottom-color: black;
+  font-weight: bold;
 }
 
-/* line 13, ../sass/_global.scss */
+/* line 14, ../sass/_global.scss */
 .navbar-fixed-bottom {
   font-size: 11px;
   padding-top: 0.5%;
   width: 100%;
 }
 
-/* line 18, ../sass/_global.scss */
-.jumbotron {
+/* line 19, ../sass/_global.scss */
+.container {
+  background-color: white;
   border-radius: 15px;
-  width: 97%;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 0%;
+  margin-bottom: 3%;
+}
+
+/* line 27, ../sass/_global.scss */
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+/* line 31, ../sass/_global.scss */
+.page-background {
+  background-color: #d1d1d1;
+}
+
+/* line 34, ../sass/_global.scss */
+.news-title {
+  margin-bottom: 5px;
 }
