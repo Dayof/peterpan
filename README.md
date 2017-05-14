@@ -4,9 +4,19 @@ Projeto da Hackathon Globo 2017.
 
 ## Sistema
 
-Executar <3
+Executar
 ```
 $ python run.py
+```
+
+Pacotes bases
+```
+$ bower install
+```
+
+Vigiar sass
+```
+$ grunt
 ```
 
 ## Ambiente
