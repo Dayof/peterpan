@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, make_response
 from bs4 import BeautifulSoup
 import requests
 
@@ -62,6 +62,14 @@ def index():
 			parse(link)
 
 		content = zip(title, links)
-		return render_template('links_list.html', content=content)
+
+		user_id = request.cookies.get('user_id')
+		if user_id:
+			print(user_id, 'user with id')
+			return render_template('links_list.html', content=content)
+		else:
+			resp = make_response(render_template('links_list.html', content=content))
+			resp.set_cookie('user_id', '123')
+			return resp
 	else:
 		return render_template('404.html')
