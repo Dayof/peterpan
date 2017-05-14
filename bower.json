@@ -1,0 +1,26 @@
+{
+  "name": "peterpan",
+  "homepage": "https://github.com/Dayof/peterpan",
+  "description": "",
+  "main": "run.py",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dayof/peterpan"
+  },
+  "authors": [
+    "Day",
+    "Naves",
+    "Jéssica",
+    "Ícaro"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "peterpan/static/components"
+  ],
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "bootstrap-css-only": "^3.3.7",
+    "components-font-awesome": "^4.7.0"
+  }
+}

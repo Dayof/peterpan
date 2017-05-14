@@ -1,0 +1,28 @@
+/* line 1, ../sass/_global.scss */
+.navbar {
+  background-color: #c4170c !important;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+
+/* line 7, ../sass/_global.scss */
+.navbar-fixed-top {
+  font-size: 16px;
+  line-height: 14px;
+  padding-top: 1%;
+  border-bottom-color: black;
+}
+
+/* line 13, ../sass/_global.scss */
+.navbar-fixed-bottom {
+  font-size: 11px;
+  padding-top: 0.5%;
+  width: 100%;
+}
+
+/* line 18, ../sass/_global.scss */
+.jumbotron {
+  border-radius: 15px;
+  width: 97%;
+}
