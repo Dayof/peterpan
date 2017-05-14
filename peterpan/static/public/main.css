@@ -1,4 +1,4 @@
-/* line 12, ../sass/_global.scss */
+/* line 1, ../sass/_global.scss */
 .navbar {
   background-color: #c4170c !important;
   color: white;
@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-/* line 18, ../sass/_global.scss */
+/* line 7, ../sass/_global.scss */
 .navbar-fixed-top {
   font-size: 16px;
   line-height: 14px;
@@ -14,9 +14,15 @@
   border-bottom-color: black;
 }
 
-/* line 24, ../sass/_global.scss */
+/* line 13, ../sass/_global.scss */
 .navbar-fixed-bottom {
   font-size: 11px;
   padding-top: 0.5%;
   width: 100%;
+}
+
+/* line 18, ../sass/_global.scss */
+.jumbotron {
+  border-radius: 15px;
+  width: 97%;
 }
