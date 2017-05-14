@@ -101,7 +101,7 @@ def get_template(pages):
 
 		#print(list(zip(titles,sources,dates)))
 		content = zip(titles, links)
-		return render_template('links_list.html', content=content)
+		return content
 
 def empty_lists():
 	links.clear()
@@ -118,13 +118,14 @@ def index(name):
 
 	if canConnect(pages):
 
+		content = get_template(pages)
 		user_id = request.cookies.get('user_id')
 		if user_id:
 			print(user_id, 'user with id')
-			return get_template(pages)
+			return render_template('links_list.html', content=content)
 		else:
 			resp = make_response(render_template('links_list.html', content=content))
 			resp.set_cookie('user_id', '123')
-			return get_template(pages)
+			return resp
 	else:
 		return render_template('404.html')
