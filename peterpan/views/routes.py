@@ -42,7 +42,6 @@ def index():
 					add_new(url)
 
 		content = zip(labels, links)
-		return redirect(links[0],code=302)
 		return render_template('links_list.html', content=content)
 	else:
 		return render_template('404.html')
